@@ -1,4 +1,4 @@
-import random
+import random, pygame, sys
 from Constants import *
 
 def random_color():
