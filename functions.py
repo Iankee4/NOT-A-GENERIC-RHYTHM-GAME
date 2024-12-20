@@ -16,26 +16,23 @@ def draw_notes (): #draws the notes
 
 
 def main_menu():
-    pygame.init()
-    pygame.display.set_caption("Not A Generic Rhythm Game")
     screen.fill(black)
     menu_rects.clear()
-    for i in range(len(menu_items)):
-        text_top = pygame.font.Font(None, 30)
-        text = text_top.render(menu_items[i], True, black)
-        text_box = text.get_rect(centerx=screen.get_width()/2, centery=screen.get_height()/2)
+
+
+    for i, item in enumerate(menu_items):
+        text_surface = font.render(item, True, black)
+        text_rect = text_surface.get_rect(center=(screen_width // 2,( screen_height // 2 - total //2 ) + i * 120))
 
 
         mouse_pos = pygame.mouse.get_pos()
-
-        if text_box.collidepoint(mouse_pos):
-            pygame.draw.rect(screen, gray, text_box)
-
+        if text_rect.collidepoint(mouse_pos):
+            pygame.draw.rect(screen, highlight, text_rect.inflate(20, 10))
         else:
-            pygame.draw.rect(screen, gray , text_box)
-
-        screen.blit(text, text_box)
-        menu_rects.append(text_box)
+            pygame.draw.rect(screen, gray, text_rect.inflate(20, 10))
 
 
-    pygame.display.update()
+        screen.blit(text_surface, text_rect)
+        menu_rects.append(text_rect)  # Store the rects for interaction
+
+    pygame.display.flip()
