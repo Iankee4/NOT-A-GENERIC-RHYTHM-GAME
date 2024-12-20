@@ -10,3 +10,11 @@ green = pygame.Color('green')
 red = pygame.Color('red')
 blue = pygame.Color('blue')
 yellow = pygame.Color('yellow')
+white = pygame.Color('white')
+black = pygame.Color('black')
+gray = pygame.Color('gray')
+
+
+
+menu_items = ["Play", "Settings", "Exit"]
+menu_rects = []
