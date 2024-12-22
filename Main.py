@@ -1,7 +1,9 @@
 from functions import *
 
 
+
 while True:
+
     main_menu()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -11,12 +13,14 @@ while True:
             for i, rect in enumerate(menu_rects):
                 if rect.collidepoint(event.pos):
                     if menu_items[i] == "Play":
-                        pass
-                        #level selection screen should open
+                        song_selection()
+                        print("play")
 
 
                     elif menu_items[i] == "Settings":
-                        pass
+                        print("settings")
+                        settings_screen()
+
                        # menu screen that should let you change keybind and stuff
                     elif menu_items[i] == "Exit":
                         quit()
