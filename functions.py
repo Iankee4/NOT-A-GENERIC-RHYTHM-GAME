@@ -36,3 +36,14 @@ def main_menu():
         menu_rects.append(text_rect)  # Store the rects for interaction
 
     pygame.display.flip()
+
+def song_selection():
+    screen.fill(black)
+    text_surface = font.render("Select a song", True, black)
+    text_rect = text_surface.get_rect(center = (screen_width // 2, screen_height // 2 ))
+    screen.blit(text_surface, text_rect)
+
+
+
+def settings_screen():
+    pass
